@@ -110,3 +110,32 @@ person.name = "Alice"; // This change will be ignored
 person.gender = "Male"; // This change will be ignored
 console.log(person); // Output: { name: 'John', age: 30 }
 ```
+
+## _Program_
+
+### 1. Write a function that generates a random number between two ranges, -100 to 0 and 800 - 900.
+
+```Javascript
+function randomInTwoRange(min1, max1, min2, max2) {
+  // Generate a random number between 0 and 1 to determine which range to use
+  const rangeSelector = Math.random();
+
+  // Choose the range based on the random selector
+  let min, max;
+  if (rangeSelector < 0.5) {
+    min = min1;
+    max = max1;
+  } else {
+    min = min2;
+    max = max2;
+  }
+
+  // Generate and return a random number within the selected range
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// Example usage
+console.log(randomInTwoRange(-100, 0, 800, 900)); // Output will be a random number within the specified ranges
+
+```
+
